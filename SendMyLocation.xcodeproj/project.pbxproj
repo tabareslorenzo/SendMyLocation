@@ -15,6 +15,9 @@
 		F90F106A22D161D700BD829F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F90F106822D161D700BD829F /* LaunchScreen.storyboard */; };
 		F90F107522D161D700BD829F /* SendMyLocationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90F107422D161D700BD829F /* SendMyLocationTests.swift */; };
 		F90F108022D161D700BD829F /* SendMyLocationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90F107F22D161D700BD829F /* SendMyLocationUITests.swift */; };
+		F90F108E22D1630400BD829F /* location.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90F108D22D1630400BD829F /* location.swift */; };
+		F90F109022D17E9300BD829F /* contacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90F108F22D17E9300BD829F /* contacts.swift */; };
+		F935C67322D2B3C3001D52FB /* sms.swift in Sources */ = {isa = PBXBuildFile; fileRef = F935C67222D2B3C3001D52FB /* sms.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		F90F107B22D161D700BD829F /* SendMyLocationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SendMyLocationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F90F107F22D161D700BD829F /* SendMyLocationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMyLocationUITests.swift; sourceTree = "<group>"; };
 		F90F108122D161D700BD829F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F90F108D22D1630400BD829F /* location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = location.swift; sourceTree = "<group>"; };
+		F90F108F22D17E9300BD829F /* contacts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = contacts.swift; sourceTree = "<group>"; };
+		F935C67222D2B3C3001D52FB /* sms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sms.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +108,9 @@
 				F90F105C22D161D600BD829F /* AppDelegate.swift */,
 				F90F105E22D161D600BD829F /* ViewController.swift */,
 				F90F106022D161D600BD829F /* Main.storyboard */,
+				F90F108D22D1630400BD829F /* location.swift */,
+				F90F108F22D17E9300BD829F /* contacts.swift */,
+				F935C67222D2B3C3001D52FB /* sms.swift */,
 				F90F106622D161D700BD829F /* Assets.xcassets */,
 				F90F106822D161D700BD829F /* LaunchScreen.storyboard */,
 				F90F106B22D161D700BD829F /* Info.plist */,
@@ -260,8 +269,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				F90F106522D161D600BD829F /* SendMyLocation.xcdatamodeld in Sources */,
+				F935C67322D2B3C3001D52FB /* sms.swift in Sources */,
 				F90F105F22D161D600BD829F /* ViewController.swift in Sources */,
+				F90F108E22D1630400BD829F /* location.swift in Sources */,
 				F90F105D22D161D600BD829F /* AppDelegate.swift in Sources */,
+				F90F109022D17E9300BD829F /* contacts.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
