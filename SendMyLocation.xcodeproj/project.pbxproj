@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		F90F105D22D161D600BD829F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90F105C22D161D600BD829F /* AppDelegate.swift */; };
 		F90F105F22D161D600BD829F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90F105E22D161D600BD829F /* ViewController.swift */; };
-		F90F106222D161D600BD829F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F90F106022D161D600BD829F /* Main.storyboard */; };
+		F90F106222D161D600BD829F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F90F106022D161D600BD829F /* Main.storyboard */; settings = {ASSET_TAGS = (Cell.row, ); }; };
 		F90F106522D161D600BD829F /* SendMyLocation.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F90F106322D161D600BD829F /* SendMyLocation.xcdatamodeld */; };
 		F90F106722D161D700BD829F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F90F106622D161D700BD829F /* Assets.xcassets */; };
 		F90F106A22D161D700BD829F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F90F106822D161D700BD829F /* LaunchScreen.storyboard */; };
@@ -199,6 +199,9 @@
 		F90F105122D161D600BD829F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					Cell.row,
+				);
 				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "Lorenzo Tabares";

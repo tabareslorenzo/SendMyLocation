@@ -14,6 +14,24 @@ var contacts = Contact().getinfo()
 class ViewController: UITableViewController {
 
     override func viewDidLoad() {
+        NSSetUncaughtExceptionHandler { exception in
+            
+            print(exception)
+            
+            print(exception.callStackSymbols)
+            
+        }
+        
+
+//        @try {
+//            retVal = UIApplicationMain...
+//        }
+//        @catch (NSException* exception) {
+//            NSLog(@"Uncaught exception %@", exception);
+//            NSLog(@"Stack trace: %@", [exception callStackSymbols]);
+//        }
+//        Contact().getinfo()
+//        location().AuthStatus()
         super.viewDidLoad()
         let contact = Contact()
         contact.checkAuth()
@@ -43,7 +61,7 @@ class ViewController: UITableViewController {
         print("jhkhjhh")
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
 //        cell.accessoryType = .detailButton
-        cell.accessoryType = .detailDisclosureButton
+//        cell.accessoryType = .detailDisclosureButton
         let contact = contacts[indexPath.section]
         var button = UIButton(type : .custom)
         let title = (contact.firstname + " " + contact.lastname)
@@ -74,7 +92,14 @@ class ViewController: UITableViewController {
     }
 
 
-
+    @IBAction func action(_ sender: UIButton) {
+        let contact = contacts[sender.tag]
+        print("Ha")
+        print(location().AuthStatus().1)
+        sms().send(target: contact.PhoneNumber, Message: location().AuthStatus().1)
+        
+    }
+    
 }
 
 extension ViewController: MFMessageComposeViewControllerDelegate
