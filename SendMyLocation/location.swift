@@ -45,9 +45,12 @@ class location{
             {
                 print("location servies are enable this application")
                 print(locationManager.location?.coordinate.latitude)
+                let lat = locationManager.location?.coordinate.latitude
                 print(locationManager.location?.coordinate.longitude)
+                let long = locationManager.location?.coordinate.longitude
+                let loc = "latitude: \(lat) longitude:\(long)"
 //                CLLocationManager.loca(CLLocationManager)
-                return(true, "location servies are enable this application")
+                return(true, loc)
             }
             else{
                 print(CLLocationManager.authorizationStatus().rawValue)

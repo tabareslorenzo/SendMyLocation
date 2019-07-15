@@ -42,12 +42,19 @@ class ViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         print("jhkhjhh")
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+//        cell.accessoryType = .detailButton
         cell.accessoryType = .detailDisclosureButton
         let contact = contacts[indexPath.section]
         var button = UIButton(type : .custom)
         let title = (contact.firstname + " " + contact.lastname)
         button.setTitle("send", for: .normal)
-        buttons.append(button)
+        var label = UILabel(frame: CGRect(x:100, y:100, width:100, height:100))
+        label.text = "send"
+        label.textColor = .blue
+//        cell.addSubview(label)
+//        cell.accessoryView = button
+//        cell.accessoryType = .detailDisclosureButton
+//        buttons.append(button)
         print(contact.firstname)
 //        cell.imageView?.image = button.backgroundImage(for: .normal)
         cell.textLabel?.text = (contact.firstname + " " + contact.lastname)
@@ -56,7 +63,14 @@ class ViewController: UITableViewController {
         return cell
     }
     override func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
+        print("Ha")
         //doSomethingWithItem(indexPath.row)
+        let contact = contacts[indexPath.row]
+        print("Ha")
+        print(location().AuthStatus().1)
+        sms().send(target: contact.PhoneNumber, Message: location().AuthStatus().1)
+        
+        
     }
 
 
