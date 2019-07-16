@@ -28,11 +28,13 @@ class location{
             
         case .authorizedWhenInUse:
             // Enable basic location features
+            locationManager.startUpdatingLocation()
             return true;
             break
             
         case .authorizedAlways:
             // Enable any of your app's location features
+            locationManager.startUpdatingLocation()
             return true;
             break
         }
@@ -44,11 +46,20 @@ class location{
             if(self.enableLocationServices())
             {
                 print("location servies are enable this application")
+//                locationManager.requestLocation()
+//                 print(locationManager.)
                 print(locationManager.location?.coordinate.latitude)
                 let lat = locationManager.location?.coordinate.latitude
                 print(locationManager.location?.coordinate.longitude)
                 let long = locationManager.location?.coordinate.longitude
-                let loc = "latitude: \(lat) longitude:\(long)"
+                //let loc = "latitude: \(lat) longitude:\(long)"
+                let loc = "\(lat.unsafelyUnwrapped),\(long.unsafelyUnwrapped)"
+                print(loc)
+//                let path = "https://www.google.com/maps/search/?api=1&query="+loc
+//                print(path)
+//                let url = URL(string: path)
+//                //let url = URL(fileReferenceLiteralResourceName: path)
+//                print(url.unsafelyUnwrapped)
 //                CLLocationManager.loca(CLLocationManager)
                 return(true, loc)
             }
