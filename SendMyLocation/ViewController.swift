@@ -27,22 +27,9 @@ class ViewController: UITableViewController {
         }
         
 
-//        @try {
-//            retVal = UIApplicationMain...
-//        }
-//        @catch (NSException* exception) {
-//            NSLog(@"Uncaught exception %@", exception);
-//            NSLog(@"Stack trace: %@", [exception callStackSymbols]);
-//        }
-//        Contact().getinfo()
-//        location().AuthStatus()
+
         super.viewDidLoad()
-//        let contact = Contact()
-//        DispatchQueue.main.async {
-//            contacts = contact.getinfo()
-//            self.tableView.reloadData()
-//            print("pizzas")
-//        }
+
         
         contact.checkAuth(completion:{
             DispatchQueue.main.async {
@@ -52,27 +39,15 @@ class ViewController: UITableViewController {
             }})
         location().AuthStatus()
         print("what")
-//        contacts = contact.getinfo()
-        
-//        DispatchQueue.main.async {
-//            contacts = contact.getinfo()
-//            self.tableView.reloadData()
-//            print("pizzas")
-//        }
-        print("whatwhat")
-                //sms().send(target: "blah", Message: "blah")
 
-        // Do any additional setup after loading the view, typically from a nib.
     }
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         print("yes")
         print(contact.getinfo())
         return contacts.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         print("burger")
 
         return 1
@@ -81,9 +56,7 @@ class ViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         print("jhkhjhh")
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-//        cell.accessoryType = .detailButton
-//        cell.accessoryType = .detailDisclosureButton
-        //cell.
+        
         cell.contentView.tag = indexPath.section
         let contact = contacts[indexPath.section]
         var button = UIButton(type : .custom)
@@ -92,12 +65,8 @@ class ViewController: UITableViewController {
         var label = UILabel(frame: CGRect(x:100, y:100, width:100, height:100))
         label.text = "send"
         label.textColor = .blue
-//        cell.addSubview(label)
-//        cell.accessoryView = button
-//        cell.accessoryType = .detailDisclosureButton
-//        buttons.append(button)
+
         print(contact.firstname)
-//        cell.imageView?.image = button.backgroundImage(for: .normal)
         cell.textLabel?.text = (contact.firstname + " " + contact.lastname)
 //        print(cell.textLabel?.text)
 
