@@ -27,12 +27,16 @@ class Contact{
     var contsInfo: [contactInfo] = [contactInfo]()
     func getinfo()->[contactInfo]{
         print("pizzaha")
+        print(self.contsInfo)
+//        for contact in contsInfo{
+//            print(contact)
+//        }
         return self.contsInfo
     }
     func setinfo(cons: [contactInfo]){
         self.contsInfo = cons
     }
-    func checkAuth(){
+    func checkAuth(completion: @escaping ()->()){
         let authorizationStatus = CNContactStore.authorizationStatus(for: CNEntityType.contacts)
         switch authorizationStatus {
         case .notDetermined:
@@ -42,11 +46,15 @@ class Contact{
                 if(Bool)
                 {
                     print("authorized")
+                    self.setinfo(cons: self.extract())
+                    print("pizzzzza")
+                    completion()
                 }
                 else{
                     print(Error)
                 }
             })
+            //completion()
             break
             
         case .restricted, .denied:
@@ -58,6 +66,7 @@ class Contact{
             // Enable contact features
             print("authorized")
             self.setinfo(cons: self.extract())
+            completion()
             break
             
         }
@@ -88,9 +97,23 @@ class Contact{
         }
         if(!contacts.isEmpty)
         {
+//            print(contacts)
+            var x = 1
+            
+            
             for contact in contacts{
-                contactsInfo.append(contactInfo(f: contact.givenName, l: contact.familyName, p: contact.phoneNumbers[0].value.stringValue))
+                if((!contact.givenName.isEmpty || !contact.familyName.isEmpty) && contact.phoneNumbers.count > 0)
+                {
+                     contactsInfo.append(contactInfo(f: contact.givenName, l: contact.familyName, p: contact.phoneNumbers[0].value.stringValue))
+                }
+               
+                x+=1
+                print(x)
             }
+            print("idkkkk")
+        }
+        else{
+            print("whatis")
         }
         return contactsInfo
     }

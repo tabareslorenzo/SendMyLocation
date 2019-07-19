@@ -10,12 +10,14 @@ import UIKit
 import MessageUI
 
 var buttons = [UIButton]()
+let contact = Contact()
 var contacts = Contact().getinfo()
 class ViewController: UITableViewController {
 
     override func viewDidLoad() {
         print("what")
-        location().AuthStatus()
+        print("HAHAHAHHAHAHAHAH")
+        //location().AuthStatus()
         NSSetUncaughtExceptionHandler { exception in
             
             print(exception)
@@ -35,15 +37,28 @@ class ViewController: UITableViewController {
 //        Contact().getinfo()
 //        location().AuthStatus()
         super.viewDidLoad()
-        let contact = Contact()
-        contact.checkAuth()
-        print("what")
-        contacts = contact.getinfo()
-        DispatchQueue.main.async {
+//        let contact = Contact()
+//        DispatchQueue.main.async {
+//            contacts = contact.getinfo()
+//            self.tableView.reloadData()
+//            print("pizzas")
+//        }
+        
+        contact.checkAuth(completion:{
+            contacts = contact.getinfo()
             self.tableView.reloadData()
-            print("pizza")
-        }
-
+            print("pizzas")
+        })
+        location().AuthStatus()
+        print("what")
+//        contacts = contact.getinfo()
+        
+//        DispatchQueue.main.async {
+//            contacts = contact.getinfo()
+//            self.tableView.reloadData()
+//            print("pizzas")
+//        }
+        print("whatwhat")
                 //sms().send(target: "blah", Message: "blah")
 
         // Do any additional setup after loading the view, typically from a nib.
@@ -51,11 +66,14 @@ class ViewController: UITableViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         print("yes")
+        print(contact.getinfo())
         return contacts.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
+        print("burger")
+
         return 1
     }
 
@@ -64,6 +82,8 @@ class ViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
 //        cell.accessoryType = .detailButton
 //        cell.accessoryType = .detailDisclosureButton
+        //cell.
+        cell.contentView.tag = indexPath.section
         let contact = contacts[indexPath.section]
         var button = UIButton(type : .custom)
         let title = (contact.firstname + " " + contact.lastname)
@@ -95,8 +115,15 @@ class ViewController: UITableViewController {
 
 
     @IBAction func action(_ sender: UIButton) {
-        let contact = contacts[sender.tag]
+//        print(sender.accessibilityElementCount())
+//        print(sender.accessibilityValue)
+        let tablecell = sender.superview
+        print(tablecell?.tag)
+        let tag = tablecell?.tag
+        //print(sender.)
+        let contact = contacts[tag.unsafelyUnwrapped]
         print("Ha")
+        print(contact)
         print(location().AuthStatus().1)
         let msgcon = sms().send(target: contact.PhoneNumber, Message: location().AuthStatus().1)
         self.present(msgcon, animated: true, completion: nil)

@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		F90F105D22D161D600BD829F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90F105C22D161D600BD829F /* AppDelegate.swift */; };
 		F90F105F22D161D600BD829F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90F105E22D161D600BD829F /* ViewController.swift */; };
-		F90F106222D161D600BD829F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F90F106022D161D600BD829F /* Main.storyboard */; settings = {ASSET_TAGS = (Cell.row, ); }; };
+		F90F106222D161D600BD829F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F90F106022D161D600BD829F /* Main.storyboard */; settings = {ASSET_TAGS = (2, ); }; };
 		F90F106522D161D600BD829F /* SendMyLocation.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F90F106322D161D600BD829F /* SendMyLocation.xcdatamodeld */; };
 		F90F106722D161D700BD829F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F90F106622D161D700BD829F /* Assets.xcassets */; };
 		F90F106A22D161D700BD829F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F90F106822D161D700BD829F /* LaunchScreen.storyboard */; };
@@ -200,7 +200,11 @@
 			isa = PBXProject;
 			attributes = {
 				KnownAssetTags = (
+					2,
+					Cell.index,
 					Cell.row,
+					Cell.section,
+					indexPath.row,
 				);
 				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 1010;
@@ -208,13 +212,16 @@
 				TargetAttributes = {
 					F90F105822D161D600BD829F = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 					};
 					F90F106F22D161D700BD829F = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 						TestTargetID = F90F105822D161D600BD829F;
 					};
 					F90F107A22D161D700BD829F = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 						TestTargetID = F90F105822D161D600BD829F;
 					};
 				};
@@ -460,7 +467,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.codepath.SendMyLocation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -478,7 +485,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.codepath.SendMyLocation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -498,7 +505,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.codepath.SendMyLocationTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SendMyLocation.app/SendMyLocation";
 			};
@@ -519,7 +526,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.codepath.SendMyLocationTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SendMyLocation.app/SendMyLocation";
 			};
@@ -539,7 +546,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.codepath.SendMyLocationUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = SendMyLocation;
 			};
@@ -559,7 +566,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.codepath.SendMyLocationUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = SendMyLocation;
 			};
