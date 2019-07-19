@@ -45,10 +45,11 @@ class ViewController: UITableViewController {
 //        }
         
         contact.checkAuth(completion:{
+            DispatchQueue.main.async {
             contacts = contact.getinfo()
             self.tableView.reloadData()
             print("pizzas")
-        })
+            }})
         location().AuthStatus()
         print("what")
 //        contacts = contact.getinfo()
@@ -102,17 +103,6 @@ class ViewController: UITableViewController {
 
         return cell
     }
-//    override func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
-//        print("Ha")
-//        //doSomethingWithItem(indexPath.row)
-//        let contact = contacts[indexPath.row]
-//        print("Ha")
-//        print(location().AuthStatus().1)
-//        sms().send(target: contact.PhoneNumber, Message: location().AuthStatus().1)
-//
-//
-//    }
-
 
     @IBAction func action(_ sender: UIButton) {
 //        print(sender.accessibilityElementCount())
