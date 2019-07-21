@@ -13,31 +13,34 @@ let locationManager = CLLocationManager()
 //let BaseURL = "https://www.googleapis.com/geolocation/v1/geolocate?key="
 class location{
     func enableLocationServices()->Bool {
-        
+         var enabled:Bool
         switch CLLocationManager.authorizationStatus() {
         case .notDetermined:
             // Request when-in-use authorization initially
             locationManager.requestWhenInUseAuthorization()
-            return false;
+            enabled =  false;
             break
             
         case .restricted, .denied:
             // Disable location features
-            return false;
+            enabled =  false;
             break
             
         case .authorizedWhenInUse:
             // Enable basic location features
             locationManager.startUpdatingLocation()
-            return true;
+            enabled =  true;
             break
             
         case .authorizedAlways:
             // Enable any of your app's location features
             locationManager.startUpdatingLocation()
-            return true;
+            enabled =  true;
             break
+        @unknown default:
+            enabled = false
         }
+        return enabled
     }
     
     func AuthStatus() -> (Bool,String) {
@@ -48,9 +51,9 @@ class location{
                 print("location servies are enable this application")
 //                locationManager.requestLocation()
 //                 print(locationManager.)
-                print(locationManager.location?.coordinate.latitude)
+                print(locationManager.location?.coordinate.latitude as Any)
                 let lat = locationManager.location?.coordinate.latitude
-                print(locationManager.location?.coordinate.longitude)
+                print(locationManager.location?.coordinate.longitude as Any)
                 let long = locationManager.location?.coordinate.longitude
 //                let loc = "latitude: \(lat) longitude:\(long)"
                 let loc = "\(lat.unsafelyUnwrapped),\(long.unsafelyUnwrapped)"

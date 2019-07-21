@@ -51,7 +51,7 @@ class Contact{
                     completion()
                 }
                 else{
-                    print(Error)
+                    print(Error as Any)
                 }
             })
             //completion()
@@ -69,6 +69,8 @@ class Contact{
             completion()
             break
             
+        @unknown default:
+            break
         }
     
     }
@@ -77,7 +79,7 @@ class Contact{
     {
         
         var contactsInfo = [contactInfo]()
-        var req : CNContactFetchRequest = CNContactFetchRequest(keysToFetch:[CNContactGivenNameKey as CNKeyDescriptor,
+        let req : CNContactFetchRequest = CNContactFetchRequest(keysToFetch:[CNContactGivenNameKey as CNKeyDescriptor,
             CNContactFamilyNameKey as CNKeyDescriptor, CNContactPhoneNumbersKey as CNKeyDescriptor])
         var contacts : [CNContact] = [CNContact]()
         do{

@@ -9,58 +9,55 @@
 import Foundation
 import MessageUI
 
-
-let SmsManager = MFMessageComposeViewController()
-
-class sms {
-    
-    func send(target: String, Message: String) -> MFMessageComposeViewController
+class sms : NSObject, MFMessageComposeViewControllerDelegate {
+//    let smsManager = MFMessageComposeViewController()
+    deinit {
+        // perform the deinitialization
+        print("apples")
+        //smsManager.messageComposeDelegate = nil
+    }
+    func status() -> Bool
     {
         if !MFMessageComposeViewController.canSendText() {
             print("SMS services are not available")
-            return SmsManager
+            return false
         }
-        else{
+        return true
+    }
+    func send(target: String, Message: String) -> MFMessageComposeViewController
+    {
+
             print("yeah")
-            SmsManager.recipients = [target]
+            let smsManager = MFMessageComposeViewController()
+        
+            smsManager.messageComposeDelegate = self;
+
+//            for (idobject in viewControllerArray) {
+//                NSLog("Object: %@",object);
+//            }
+
+            smsManager.recipients = [target]
+
             //latitude/longitude
             let path = "https://www.google.com/maps/search/?api=1&query="+Message
-            SmsManager.body = path
-            return SmsManager
-        
-        }
-        
+            smsManager.body = path
+            print("please")
+            print(smsManager.messageComposeDelegate!)
+
+            return smsManager
+
+//        return MFMessageComposeViewController()
+
     }
-    
+    func messageComposeViewController(_ controller: MFMessageComposeViewController!, didFinishWith result: MessageComposeResult) {
+        //smsManager.messageComposeDelegate = nil;
+        print("blah")
+        controller.dismiss(animated: true, completion: nil)
+//        smsManager.messageComposeDelegate = nil;
+
+    }
+
 }
 
-//extension sms: MFMessageComposeViewControllerDelegate
-//{
-//    
-//    func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult){
-//        switch(result)
-//        {
-//        case .cancelled:
-//            //The user canceled the composition.
-//            print("message cancelled")
-//            
-//            break
-//            
-//        case .sent:
-//            //The user successfully queued or sent the message.
-//            print("message sent successfully")
-//            
-//            
-//            break
-//            
-//        case .failed:
-//            //The user’s attempt to save or send the message was unsuccessful.
-//            print("send message errror")
-//            
-//            break
-//        }
-//        
-//    }
-//}
 
 
