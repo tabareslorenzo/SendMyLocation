@@ -18,7 +18,8 @@
 		F90F108E22D1630400BD829F /* location.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90F108D22D1630400BD829F /* location.swift */; };
 		F90F109022D17E9300BD829F /* contacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90F108F22D17E9300BD829F /* contacts.swift */; };
 		F935C67322D2B3C3001D52FB /* sms.swift in Sources */ = {isa = PBXBuildFile; fileRef = F935C67222D2B3C3001D52FB /* sms.swift */; };
-		F9FA17CF22E4123F0071566E /* msgControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FA17CE22E4123F0071566E /* msgControl.swift */; };
+		F9FA17D122E7C53E0071566E /* SavedLocations.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FA17D022E7C53E0071566E /* SavedLocations.swift */; };
+		F9FA17D322E7C69A0071566E /* SavedLocViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FA17D222E7C69A0071566E /* SavedLocViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,7 +57,8 @@
 		F90F108D22D1630400BD829F /* location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = location.swift; sourceTree = "<group>"; };
 		F90F108F22D17E9300BD829F /* contacts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = contacts.swift; sourceTree = "<group>"; };
 		F935C67222D2B3C3001D52FB /* sms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sms.swift; sourceTree = "<group>"; };
-		F9FA17CE22E4123F0071566E /* msgControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = msgControl.swift; sourceTree = "<group>"; };
+		F9FA17D022E7C53E0071566E /* SavedLocations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedLocations.swift; sourceTree = "<group>"; };
+		F9FA17D222E7C69A0071566E /* SavedLocViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedLocViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,7 +115,8 @@
 				F90F108D22D1630400BD829F /* location.swift */,
 				F90F108F22D17E9300BD829F /* contacts.swift */,
 				F935C67222D2B3C3001D52FB /* sms.swift */,
-				F9FA17CE22E4123F0071566E /* msgControl.swift */,
+				F9FA17D022E7C53E0071566E /* SavedLocations.swift */,
+				F9FA17D222E7C69A0071566E /* SavedLocViewController.swift */,
 				F90F106622D161D700BD829F /* Assets.xcassets */,
 				F90F106822D161D700BD829F /* LaunchScreen.storyboard */,
 				F90F106B22D161D700BD829F /* Info.plist */,
@@ -284,10 +287,11 @@
 				F90F106522D161D600BD829F /* SendMyLocation.xcdatamodeld in Sources */,
 				F935C67322D2B3C3001D52FB /* sms.swift in Sources */,
 				F90F105F22D161D600BD829F /* ViewController.swift in Sources */,
-				F9FA17CF22E4123F0071566E /* msgControl.swift in Sources */,
 				F90F108E22D1630400BD829F /* location.swift in Sources */,
 				F90F105D22D161D600BD829F /* AppDelegate.swift in Sources */,
 				F90F109022D17E9300BD829F /* contacts.swift in Sources */,
+				F9FA17D122E7C53E0071566E /* SavedLocations.swift in Sources */,
+				F9FA17D322E7C69A0071566E /* SavedLocViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -65,12 +65,7 @@ class ViewController: UITableViewController {
         
         cell.contentView.tag = indexPath.section
         let contact = contacts[indexPath.section]
-//        var button = UIButton(type : .custom)
-//        let title = (contact.firstname + " " + contact.lastname)
-//        button.setTitle("send", for: .normal)
-//        var label = UILabel(frame: CGRect(x:100, y:100, width:100, height:100))
-//        label.text = "send"
-//        label.textColor = .blue
+
 
         print(contact.firstname)
         cell.textLabel?.text = (contact.firstname + " " + contact.lastname)
