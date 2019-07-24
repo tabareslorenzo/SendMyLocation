@@ -57,6 +57,7 @@ class location{
                 let long = locationManager.location?.coordinate.longitude
 //                let loc = "latitude: \(lat) longitude:\(long)"
                 let loc = "\(lat.unsafelyUnwrapped),\(long.unsafelyUnwrapped)"
+//                let loc = "\(lat),\(long)"
                 print(loc)
 //                let path = "https://www.google.com/maps/search/?api=1&query="+loc
 //                print(path)
